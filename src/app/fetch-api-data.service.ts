@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
-import { catchError } from 'rxjs/internal/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 import { title } from 'node:process';
 
 //Declaring the api url that will provide data for the client app
-const apiUrl = 'YOUR_HOSTED_API_URL_HERE/';
+const apiUrl = '//TBD//'; //***YOUR_HOSTED_API_URL_HERE***
 @Injectable({
   providedIn: 'root'
 })
-export class ApiDataCallService {
+export class FetchApiDataService { //Initially was UserRegistrationService
   // Inject the HttpClient module to the constructor params
  // This will provide HttpClient to the entire class, making it available via this.http
   constructor(private http: HttpClient) {
@@ -45,13 +44,13 @@ export class ApiDataCallService {
     );
   }
   // Non-typed response extraction
-  private extractResponseData(res: Response): any {
+  private extractResponseData(res: Object): any {
     const body = res;
     return body || { };
   }
 
   // Method making the api call to get one movie from the myFlix API
-  getOneMovie(): Observable<any> {
+  getOneMovie(title: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies/' + title, {headers: new HttpHeaders(
       {
@@ -77,9 +76,9 @@ export class ApiDataCallService {
   }
 
   // Method making the api call to get the movies for a specified genre from the myFlix API
-  getGenre(): Observable<any> {
+  getGenre(name: string): Observable<any> { // Change made based on instructor feedback task 6.2. Not sure why!
     const token = localStorage.getItem('token');
-    return this.http.get(apiUrl + 'movies/genre/:Name', {headers: new HttpHeaders(
+    return this.http.get(apiUrl + 'movies/genre/' + name, {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
       })
