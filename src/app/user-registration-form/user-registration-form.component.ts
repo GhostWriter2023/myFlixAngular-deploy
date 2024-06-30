@@ -12,29 +12,31 @@ export class UserRegistrationFormComponent implements OnInit {
 
   @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
 
-constructor(
-    public fetchApiData: FetchApiDataService, // The service for fetching API data
-    public dialogRef: MatDialogRef<UserRegistrationFormComponent>, // The reference to the dialog
-    public snackBar: MatSnackBar) { }  // The service for showing snack bar notifications
+  constructor(
+      public fetchApiData: FetchApiDataService, // The service for fetching API data
+      public dialogRef: MatDialogRef<UserRegistrationFormComponent>, // The reference to the dialog
+      public snackBar: MatSnackBar) { }  // The service for showing snack bar notifications
 
-ngOnInit(): void {
-}
+  ngOnInit(): void {
+  }
 
-// This is the function responsible for sending the form inputs to the backend
-registerUser(): void {
-    this.fetchApiData.userRegistration(this.userData).subscribe((result) => {
-  // Logic for a successful user registration goes here! (To be implemented)
-     this.dialogRef.close(); // Close the modal on success
-     console.log(result);
-     this.snackBar.open(result, 'OK', {
-        duration: 2000
-     });
-    }, (result) => {
-      console.log(result);
-      this.snackBar.open(result, 'OK', {
-        duration: 2000
-      });
+  // This is the function responsible for sending the form inputs to the backend
+  registerUser(): void {
+    this.fetchApiData.userRegistration(this.userData).subscribe({  // debugging to address the deprecation warnings on subscribe, removed  ((result) => {
+      next: (result) => {
+      // Logic for a successful user registration
+        this.dialogRef.close(); // Close the modal on success
+        console.log(result);
+        this.snackBar.open('User registration successful', 'OK', {
+            duration: 2000
+        });
+      },
+      error: (error) => {
+        console.log(error);
+        this.snackBar.open('User registration unsuccessful', 'OK', {
+          duration: 2000
+        });
+      }
     });
   }
-
-  }
+}

@@ -5,7 +5,7 @@ import { map, catchError } from 'rxjs/operators';
 import { title } from 'node:process';
 
 //Declaring the api url that will provide data for the client app
-const apiUrl = '//TBD//'; //***YOUR_HOSTED_API_URL_HERE***
+const apiUrl = 'https://myflix-app-2024.netlify.app/'; //***HOSTED_API_URLs tried: 2) https://git.heroku.com/ghostwriter-movies.git [CORS error] 1) https://myflix-app-2024.netlify.app/***
 @Injectable({
   providedIn: 'root'
 })
