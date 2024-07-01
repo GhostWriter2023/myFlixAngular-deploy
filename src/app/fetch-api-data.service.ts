@@ -5,7 +5,7 @@ import { map, catchError } from 'rxjs/operators';
 import { title } from 'node:process';
 
 //Declaring the api url that will provide data for the client app
-const apiUrl = 'https://myflix-app-2024.netlify.app/'; //HOSTED_API_URLs
+const apiUrl = 'https://ghostwriter-movies-1d2fe76cf812.herokuapp.com/'; //HOSTED_API_URLs
 @Injectable({
   providedIn: 'root'
 })
@@ -16,17 +16,17 @@ export class FetchApiDataService { //Initially was UserRegistrationService
   }
 
   // Method making the api call for the user registration endpoint
-  public userRegistration(userDetails: any): Observable<any> {
-    console.log(userDetails);
-    return this.http.post(apiUrl + 'users', userDetails).pipe(
+  public userRegistration(userData: any): Observable<any> {
+    console.log(userData);
+    return this.http.post(apiUrl + 'users', userData).pipe(
     catchError(this.handleError)
     );
   }
 
   // Method making the api call for the user login endpoint
-  public userLogin(userDetails: any): Observable<any> {
-    console.log(userDetails);
-    return this.http.post(apiUrl + 'login', userDetails).pipe(
+  public userLogin(userData: any): Observable<any> {
+    console.log(userData);
+    return this.http.post(apiUrl + 'login', userData).pipe(
     catchError(this.handleError)
     );
   }
@@ -170,12 +170,11 @@ export class FetchApiDataService { //Initially was UserRegistrationService
     if (error.error instanceof ErrorEvent) {
     console.error('Some error occurred:', error.error.message);
     } else {
-    console.error(
-        `Error Status code ${error.status}, ` +
-        `Error body is: ${error.error}`);
+    console.error(`Error Status code ${error.status}, ` +
+        `Error body is: ${JSON.stringify(error.error)}`);
+    console.error('Full error object:', error);
     }
-    return throwError(
-    'Something bad happened; please try again later.');
+    return throwError('Something bad happened; please try again later.');
   }
 }
 
