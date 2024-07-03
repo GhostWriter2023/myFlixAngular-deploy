@@ -10,7 +10,10 @@ import { UserLoginFormComponent } from '../user-login-form/user-login-form.compo
   styleUrl: './welcome-page.component.scss'
 })
 export class WelcomePageComponent implements OnInit {
+  backgroundImage: string = 'images/projector.png'; // Add the backgroundImage property
+
   constructor(public dialog: MatDialog) { }
+
   ngOnInit(): void {}
 
 openUserRegistrationDialog(): void { // Function to open the dialog when the signup button is clicked

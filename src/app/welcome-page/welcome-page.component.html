@@ -1,11 +1,10 @@
 <div class="main-page">
-    <h1>
-      Welcome to myFlix!
-    </h1>
+  <div class="background-image" [ngStyle]="{'background-image': 'url(' + backgroundImage + ')'}"></div>
+  <h1>Welcome to myFlix!</h1>
+  <div class="buttons">
     <button
       mat-raised-button
       (click)="openUserRegistrationDialog()"
-      style="margin-right: 10px;"
       color="primary"
     >
       Sign Up
@@ -13,17 +12,22 @@
     <button
       mat-raised-button
       (click)="openUserLoginDialog()"
-      style="margin-right: 10px;"
       color="primary"
     >
       Login
     </button>
-<!--    <button  // Created Welcome Page, and migrated code from app.comp.html
-      mat-raised-button
-      (click)="openMoviesDialog()"
-      style="margin-right: 10px;"
-      color="primary"
-    >
-      All Movies
-    </button>  -->
   </div>
+  <!--    <button  // Created Welcome Page, and migrated code from app.comp.html
+    mat-raised-button
+    (click)="openMoviesDialog()"
+    style="margin-right: 10px;"
+    color="primary"
+  >
+    All Movies
+  </button>  -->
+
+  <div class="welcome-box">
+    <p>With MyFlix, you can easily explore and discover a wide range of movies, get detailed information about them, and save your favorites to your personal page for quick access anytime.</p>
+    <p><span class="bold-text">Dive in and start curating your ultimate movie collection today!</span></p>
+  </div>
+</div>

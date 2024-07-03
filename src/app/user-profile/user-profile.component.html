@@ -61,12 +61,12 @@
                     Delete
                 </button>
                 <button
-                mat-button
-                class="custom-button-update"
-                (click)="updateUser()"
-                type="submit"
-            >
-                Update
+                    mat-button
+                    class="custom-button-update"
+                    (click)="updateUser()"
+                    type="submit"
+                >
+                    Update
                 </button>
 <!--                <button
                     mat-raised-button
@@ -87,7 +87,7 @@
                 <p>You have no favorite movies.</p>
             </div>
         </div>
-        <!-- Favorite Movies Cards Start -->
+        <!-- Favorite Movies Cards Container -->
         <div class="movie-card-container">
             <mat-card *ngFor="let movie of FavoriteMovies;" class="movie-card">
                 <div class="img-container">
@@ -123,7 +123,6 @@
                     <mat-card-title class="card-title-fav">{{movie.Title}}</mat-card-title>
                 </mat-card-header>
             </mat-card>
-             <!-- Favorite Movies Cards End -->
         </div>
     </div>
 </div>
