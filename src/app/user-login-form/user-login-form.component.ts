@@ -28,7 +28,7 @@ export class UserLoginFormComponent implements OnInit {
     this.fetchApiData.userLogin(this.userData).subscribe({ // debugging to address the deprecation warnings on subscribe, removed  ((result) => {
       next: (result) => {
       // Logic for user to login
-        localStorage.setItem('user', JSON.stringify(result.user)); // ('user', result.user.Username)
+        localStorage.setItem('user', JSON.stringify(result.user));
         localStorage.setItem('token', result.token);
         this.dialogRef.close(); // Close the modal on success
         console.log(result);

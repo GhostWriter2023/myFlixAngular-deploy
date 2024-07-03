@@ -1,9 +1,9 @@
 <app-toolbar></app-toolbar>
-<!--<div style="display: flex;">-->
+
 <div class="movie-card-container">
     <mat-card *ngFor="let movie of movies;" class="movie-card">
         <mat-card-header>
-        <mat-card-title>{{movie.Title}}</mat-card-title>
+        <mat-card-title><span class="bold-text">{{movie.Title}}</span></mat-card-title>
         </mat-card-header>
         <img mat-card-image src={{movie.ImagePath}} alt= {{movie.Title}} />
         <mat-card-actions>

@@ -15,13 +15,12 @@
 }
 .custom-button-delete {
     background-color: #f3050d;
-    color: #000000 !important; /* Black text */
-    /*border: 1px solid #555;  Border color */
+    color: #000000 !important;
     padding: 10px 20px;
     font-size: 16px;
-    border-radius: 5px; /* Rounded corners */
-    text-transform: none; /* Remove uppercase transformation */
-    transition: background-color 0.3s ease; /* Smooth background color transition */
+    border-radius: 5px;
+    text-transform: none;
+    transition: background-color 0.3s ease;
 }.user-card {
     margin-top: 15vh;
     margin-right: 2vw;
@@ -38,14 +37,13 @@
 .user-card img {
     width: 100%;
     height: 73%;
-    padding: 5px;
     object-fit: cover;
     object-position: 100% 0;
     border-radius: 50%;
 }
 .edit-userdata-card {
     margin-top: 15vh;
-    padding: 25;
+    padding: 25px;
     width: 40%;
     min-width: 380px;
 }
@@ -62,7 +60,6 @@
 .actions button {
     margin-top: 15px;
     margin-left: 10px;
-    width: 20%;
 }
 
 // Movie Cards
@@ -104,8 +101,9 @@
 .card-title-fav {
     font-size: 25px;
     margin-bottom: 10px;
+    font-weight: bold;
 }
-.actions-fav {
+.actions-fav { // Synopsis, Genre, Dir, Fav buttons appear in the card
     display: flex;
     flex-direction: column;
     justify-content: center;
