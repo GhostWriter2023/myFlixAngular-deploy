@@ -1,0 +1,12 @@
+<mat-toolbar class="toolbar" role="heading">
+    <div class="toolbar-title">
+      <span>Welcome to</span>
+      <span class="title-big">myFlix</span>
+    </div>
+    <mat-menu #appMenu="matMenu">
+      <button mat-menu-item [routerLink]="['/movies']">Movies</button>
+      <button mat-menu-item [routerLink]="['/profile']">Profile</button>
+      <button mat-menu-item [routerLink]="['/logout']">Logout</button>
+    </mat-menu>
+    <button mat-fab [matMenuTriggerFor]="appMenu">Menu</button>
+  </mat-toolbar>
