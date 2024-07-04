@@ -46,8 +46,8 @@ The following sections provide information about the requirements for the app.
 - Node.js Modules v.18.19.0
 - npm v10.2.3
 - JavaScript (ES2015+)
-- 
 - Various middleware packages & Package Managers
+- GitHub & GitHub Pages
 
 ## Getting Started
 
