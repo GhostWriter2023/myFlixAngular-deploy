@@ -18,59 +18,52 @@
         z-index: -1; // Ensure the background image is behind other content
         opacity: 0.5; // Adjust opacity for a faded effect
     }
-    
     h1 {
         margin: 100; // Top margin
         color: #000000;
         font-size: 3em;
     }
-
     .buttons {
         display: flex;
         gap: 10px; // Adjust the spacing between buttons
-        margin-top: 10px; // Adjust this value if needed
+        margin-top: 5px;
     }
-
     .bold-text {
         font-weight: bold;
     }
-
     .welcome-box {
       background-color: white;
       padding: 5px 10px 5px 15px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       position: absolute;
-      top: 66.67%;
-      left: 33.33%;
-      transform: translate(-33.33%, -66.67%);  
+      top: 66%;
+      left: 20%;
+      transform: translate(-20%, -66%);  
       color: rgb(146, 9, 244);
-      width: 25%;
-          
+      font-size: 2em;
+      width: 30%;
+
       @media (max-width: 1200px) { // Media query for responsive design
         top: 70%;
         left: 30%;
         transform: translate(-30%, -70%);
       }
-  
       @media (max-width: 992px) {
         top: 75%;
         left: 25%;
         transform: translate(-25%, -75%);
       }
-  
       @media (max-width: 768px) {
         top: 80%;
         left: 20%;
         transform: translate(-20%, -80%);
       }
-  
       @media (max-width: 576px) {
         top: 85%;
         left: 15%;
         transform: translate(-15%, -85%);
       }
-  
       @media (max-width: 400px) {
         top: 90%;
         left: 10%;

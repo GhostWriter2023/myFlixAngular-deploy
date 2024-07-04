@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { environment } from '../environments/environment'; // Import environment
 
 //Declaring the api url that will provide data for the client app
-const apiUrl = 'https://ghostwriter-movies-1d2fe76cf812.herokuapp.com/'; //HOSTED_API_URLs
+//const apiUrl = 'https://ghostwriter-movies-1d2fe76cf812.herokuapp.com/'; //HOSTED_API_URL (replaced by environment variable)
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +14,8 @@ const apiUrl = 'https://ghostwriter-movies-1d2fe76cf812.herokuapp.com/'; //HOSTE
 export class FetchApiDataService { //Initially was UserRegistrationService
   // Inject the HttpClient module to the constructor params
  // This will provide HttpClient to the entire class, making it available via this.http
-  constructor(private http: HttpClient) {
+ private apiUrl = environment.apiUrl; // To use environment variable
+ constructor(private http: HttpClient) {
   }
 
   // Method making the api call for the user registration endpoint
